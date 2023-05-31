@@ -106,7 +106,7 @@ public class SyntaxTreeTest {
     @MethodSource("postfixInputAndPrefixAnswer")
     void should_convert_to_prefix(String input, String expected) {
         assertEquals(expected, TreeBuilder.buildFromPostfix(input).toPreFix());
-    }
+    } //10 2 +, + 10 2
 
     static Stream<Arguments> postfixInputAndPostfixAnswer() {
         return Stream.of(
@@ -179,7 +179,7 @@ public class SyntaxTreeTest {
     void should_build_syntax_tree_from_infix_expression(String input, List<String> expected) {
         SyntaxTree tree = TreeBuilder.buildFromInfix(input);
         assertEquals(expected, toElements(tree.inOrder()));
-    }
+    } // 10 + 2, [10, +, 2]
 
     /**/
 
